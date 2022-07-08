@@ -92,7 +92,7 @@ OKKY는 공식 API를 지원하지 않기 때문에 Python의 Selenium, Beautifu
 
 <br>
 
-## Weekly Plan( 주차별 연구 계획 )
+## Weekly Plan 주차별 연구 계획 (2022.07.03)
 <br>
 
 **1주차 07.04 ~ 07.10**
