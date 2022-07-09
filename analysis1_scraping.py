@@ -9,58 +9,40 @@ Analysis 1 - web scraping
 import requests
 from bs4 import BeautifulSoup as bs
 
+
 page = requests.get("https://okky.kr/articles/life?offset=51&max=24&sort=id&order=desc")
+
+
 soup = bs(page.text, "html.parser") # bs객체 인스턴스 생성-할당 / bs의 첫번째 파라미터는 파싱할 대상을 지정 (page라는 객체 그자체 혹은 자식요소 지정가능)
 
-# CSS 셀렉터 : https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Selectors
-element = str(soup.select('.article-id'))
+    # 한페이지 내 태그 긁어오기
+        # CSS 셀렉터 : https://developer.mozilla.org/ko/docs/Web/CSS/CSS_Selectors
+elements = str(soup.select('.article-id'))
 
-import re 
-resTag = re.sub('<.+?>', '', element, 0).strip()) # 태그 제외
+    # str 배열로 나누기
+import re
+arr_numTag = re.sub('<.+?>', '', elements, 0).split(sep=' ')
+print(arr_numTag)
 
-# article방문, 제목 가져오기
-artUrl = bs(requests.get('https://okky.kr/articles/'+ resTag).text, 'html.parser').select('.panel-title')
+    # 배열 아이템s 전처리
+for i in range(len(arr_numTag)) :
+    arr_numTag[i] = arr_numTag[i].strip('[').strip('#').strip(',').strip(']') # 태그 제외
+
+    # article방문, pages가져오기
+# artTitle = bs(requests.get('https://okky.kr/article/'+ arr_numTag[0]).text, 'html.parser').select('.panel-title')
+arr_htmls = []  #html pages 저장
+for i in range(len(arr_numTag)) :
+    arr_htmls.append(bs(requests.get('https://okky.kr/article/'+ arr_numTag[i]).text, 'html.parser'))
+
+    # htmls에서 title 추출
+arr_titles = []
+for i in range(len(arr_htmls)):
+    arr_titles.append(arr_htmls[i].find('h2',{'class': 'panel-title'}).text)
+print(arr_titles)
+
     
+### 저장하기
 
-# ###############
-# # 1. 사는얘기 탭 페이지 방문하여 태그 담는 배열 만들기
-# #     페이지 0으로 시작 24씩 증가하며 한페이지씩 넘어감
-#         # [1] https://okky.kr/articles/life?offset=0&max=24&sort=id&order=desc
-#         # [2] https://okky.kr/articles/life?offset=24&max=24&sort=id&order=desc
-# url_txt = 'https://okky.kr/articles/life?offest='
-
-
-#     # 1.1 10페이지짜리 url담긴 배열 만들기
-# urlArr = []
-# for i in range(10) : 
-#     # print(url_txt + str(i*24))
-#     urlArr.append(url_txt + str(i*24))
-# # print(urlArr)
-
-#     #+ 페이지 가져오기
-# arr_pages = []
-# def getPages(url) :
-#     return requests.get(url)
-# arr_pages = list(map(getPages,urlArr))
-# print(arr_pages)
-
-# #     # 1.2 urlArr 페이지의 모든 태그 긁어서 배열에 '게시글URL'로 저장
-# arr_soups = []
-# def getSoups(page) :
-#     return bs(page.text, 'html.parser').select('.article-id')
-# arr_soups = list(map(getSoups,urlArr))
-
-# print(arr_soups)
-# arr_result = []
-
-# list(map(,urlArr))
-# for i in range(len(urlArr)) :
-#     currPage = requests.get('urlArr')
-#     url_txt
+    #https://aruymeek.tistory.com/7
     
-    
-    # 1.3 각 arr_url_tag의 제목 긁어오기 테스트
-
-
-# for index, element in enumerate(elements, 1):
-# 		print("{} 번째 게시글의 제목: {}".format(index, element.text))
+    #https://velog.io/@banana/46.3-%EC%9B%B9-%ED%8E%98%EC%9D%B4%EC%A7%80%EC%9D%98-HTML%EC%9D%84-%EA%B0%80%EC%A0%B8%EC%99%80%EC%84%9C-%ED%8C%8C%EC%9D%BC%EB%A1%9C-%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0
