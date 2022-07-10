@@ -12,10 +12,10 @@
 <br>
 
 관련작업물 : 
-- [scrap_1_createPageIdxUrls]()
-- [scrap_2_getArticleTags]()
-- [scrap_3_createArticleUrls]()
-- [scrap_4_getArticleHtmls]()
+- [scrap_1_createPageIdxUrls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_1_createPageIdxUrls.py)
+- [scrap_2_getArticleTags](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_2_getArticleTags.py)
+- [scrap_3_createArticleUrls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_3_createArticleUrls.py)
+- [scrap_4_getArticleHtmls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_4_getArticleHtmls.py)
 
 <br>
 
@@ -41,17 +41,17 @@
 스크래핑 과정을 핵심 기능단위 기준으로 총 네개의 로직으로 분할 및 수행했으며 각 로직(파일)은 다음 단계를 위한 특정 산출물을 반환함
 
 1. [createPageIdxUrls](): 게시글 목록에 접근하기 위한 url 배열 생성(24증가 기준)
-    - 산출물: [게시글목록 URLs](./arr1_pageIdxUrl.txt)
+    - 산출물: [게시글목록 URLs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr1_pageIdxUrl.txt)
 <br><br>
 
-2. [getArticleTags](): 하나의 게시글 목록에서 22개씩의 `article id(tag)`를 가져오는 로직을 총 658페이지의 게시글에 대해 수행하여 배열에 저장, 해당 작업은 str 전처리 작업을 포함
-    - 산출물: [Article IDs](./arr2_artTags.txt)
+1. [getArticleTags](): 하나의 게시글 목록에서 22개씩의 `article id(tag)`를 가져오는 로직을 총 658페이지의 게시글에 대해 수행하여 배열에 저장, 해당 작업은 str 전처리 작업을 포함
+    - 산출물: [Article IDs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr2_artTags.txt)
 <br><br>
 
-3.  [createArticleUrls](): 직전 작업 산출물인 artTags를 활용, 개별 게시글 페이지에 접근하기 위한 url을 생성
-    - 산출물: [Article URLs](./arr3_artIdxUrl.txt)
+1.  [createArticleUrls](): 직전 작업 산출물인 artTags를 활용, 개별 게시글 페이지에 접근하기 위한 url을 생성
+    - 산출물: [Article URLs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr3_artIdxUrl.txt)
 <br><br>
 
-4. [getArticleHtmls]():  직전 작업 산출물인 artIdxUrl을 활용, 개별 타겟 게시글 페이지의 html파일을 요청 및 배열의 item으로 저장
-    - 산출물 : [Article HTMLs](./arr4_artHtmls.txt)
+1. [getArticleHtmls]():  직전 작업 산출물인 artIdxUrl을 활용, 개별 타겟 게시글 페이지의 html파일을 요청 및 배열의 item으로 저장
+    - 산출물 : [Article HTMLs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr4_artHtmls.txt)
 <br><br>
