@@ -8,7 +8,7 @@ arr3_artIdxUrl = np.loadtxt('arr3_artIdxUrl.txt', dtype='str').tolist()
 
 # 1.getArticleHtml
 import time
-SLEEPTIME = 0.1  
+SLEEPTIME = 0.5
 arr4_artHtmls = []
 
 def getArtHtml(url):
