@@ -64,7 +64,7 @@ Ajou e-Business 강민형 교수님 지도하의  SMA Summer Project 2022에 선
 <br><br>
 
 1. [getArticleHtmls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_4_getArticleHtmls.py):  직전 작업 산출물인 artIdxUrl을 활용, 개별 타겟 게시글 페이지의 html파일을 요청 및 배열의 item으로 저장
-    - 산출물 : [Article HTMLs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr4_getArticleHtmls.txt)
+    - 산출물 : [Objects Array](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr_objs.npy)
 <br><br>
 
 
