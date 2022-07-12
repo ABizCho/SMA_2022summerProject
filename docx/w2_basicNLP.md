@@ -51,4 +51,4 @@
 
 2. [nlp_2_cleanEtc](https://github.com/ABizCho/SMA_2022summerProject/blob/main/nlp_2_cleanEtc.py): 
 게시글 title, comment, column이 담긴 string 값들 전체를 대상으로, E-mail, Url, 단일로 존재하는 한글 자음/모음, 구두점 및 특수문자, 이모지 를 제거하여 저장하는 전처리를 실시했음.
-    - 산출물: [df3_artsCleanEtc.csv](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr2_artTags.txt)
+    - 산출물 : [df3_arts_cleanEtc.csv](https://github.com/ABizCho/SMA_2022summerProject/blob/79bdc0a0c1064c779a7a9b67b52f659cb733b568/df3_artsCleanEtc.csv)
