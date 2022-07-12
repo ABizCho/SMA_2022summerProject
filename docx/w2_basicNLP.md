@@ -1,4 +1,4 @@
-# 1주차 TASK2 : 기초 텍스트 정제 (22.07.10)
+# 1주차 TASK2 : 기초 텍스트 정제 (22.07.11)
 1주차 예정 작업인 기초 텍스트 정제 수행 <br>
 이전 작업물인 구조적으로 저장된 스크래핑 결과물 [arr4_objs.npy 관련 파일](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_4_getArticleHtmls.py) 를 불러와 기초 텍스트 전처리를  수행했음.
 
