@@ -26,18 +26,18 @@
 ## 1. 기초 정제 작업을 마친 DataSet 정보
 - records 수 : 15373
 - columns :
-    1. art_id : 게시글의 식별자 (int)
-    2. art_date_year : 게시 연도 (int)
-    3. art_date_month : 게시 월 (int)
-    4. art_date_day : 게시 일자 (int)
-    5. art_date_hour : 게시 시간 (int)
-    6. user_score : 작성자의 활동점수 (str)
-    7. art_Ncomment : 게시글에 달린 댓글 수 (int)
-    8. art_Nview : 게시글의 조회수 (int)
-    9. art_Nlike : 게시글이 받은 공감 수  (int)
-    10. art_title : 게시글 제목  (str)
-    11. art_content : 게시글 본문 (str)
-    12. art_comments : 게시글에 소속된 댓글 모음 (str), 띄어쓰기x21개로 댓글 구분
+    1. `art_id` : 게시글의 식별자 (int)
+    2. `art_date_year` : 게시 연도 (int)
+    3. `art_date_month` : 게시 월 (int)
+    4. `art_date_day` : 게시 일자 (int)
+    5. `art_date_hour` : 게시 시간 (int)
+    6. `user_score` : 작성자의 활동점수 (str)
+    7. `art_Ncomment` : 게시글에 달린 댓글 수 (int)
+    8. `art_Nview` : 게시글의 조회수 (int)
+    9. `art_Nlike` : 게시글이 받은 공감 수  (int)
+    10. `art_title` : 게시글 제목  (str)
+    11. `art_content` : 게시글 본문 (str)
+    12. `art_comments` : 게시글에 소속된 댓글 모음 (str), 띄어쓰기x21개로 댓글 구분
 
 
 <br><br><br>
