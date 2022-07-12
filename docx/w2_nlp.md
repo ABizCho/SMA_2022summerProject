@@ -5,12 +5,13 @@
 <br>
 
 주요 Libraries : 
+- pandas : 데이터프레임 관련
 - re : 정규식 관련 라이브러리
 
 <br>
 
 관련작업물 : 
-- [scrap_1_createPageIdxUrls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_1_createPageIdxUrls.py)
+- [nlp_1_cleanMeta](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_1_createPageIdxUrls.py)
 - [scrap_2_getArticleTags](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_2_getArticleTags.py)
 - [scrap_3_createArticleUrls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_3_createArticleUrls.py)
 - [scrap_4_getArticleHtmls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_4_getArticleHtmls.py)
