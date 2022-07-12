@@ -1,4 +1,4 @@
-# 1주차 'OKKY' Scrapping (22.07.10)
+# 1주차 TASK1 : 'OKKY' Scrapping (22.07.10)
 1주차 예정 작업인 스크래핑 수행 <br>
 국내 개발자 커뮤니티 OKKY - '사는얘기 탭' 게시물 중 [2021.06.22 ~ 2022.07.10] 기간 내 게시글을 타겟으로
 
@@ -40,18 +40,26 @@
 ## 2. 스크래핑 Process
 스크래핑 과정을 핵심 기능단위 기준으로 총 네개의 로직으로 분할 및 수행했으며 각 로직(파일)은 다음 단계를 위한 특정 산출물을 반환함
 
-1. [createPageIdxUrls](): 게시글 목록에 접근하기 위한 url 배열 생성(24증가 기준)
+1. [createPageIdxUrls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_1_createPageIdxUrls.py): 게시글 목록에 접근하기 위한 url 배열 생성(24증가 기준)
     - 산출물: [게시글목록 URLs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr1_pageIdxUrl.txt)
 <br><br>
 
-1. [getArticleTags](): 하나의 게시글 목록에서 22개씩의 `article id(tag)`를 가져오는 로직을 총 658페이지의 게시글에 대해 수행하여 배열에 저장, 해당 작업은 str 전처리 작업을 포함
+2. [getArticleTags](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_2_getArticleTags.py): 하나의 게시글 목록에서 22개씩의 `article id(tag)`를 가져오는 로직을 총 658페이지의 게시글에 대해 수행하여 배열에 저장, 해당 작업은 str 전처리 작업을 포함
     - 산출물: [Article IDs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr2_artTags.txt)
 <br><br>
 
-1.  [createArticleUrls](): 직전 작업 산출물인 artTags를 활용, 개별 게시글 페이지에 접근하기 위한 url을 생성
+3.  [createArticleUrls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_3_createArticleUrls.py): 직전 작업 산출물인 artTags를 활용, 개별 게시글 페이지에 접근하기 위한 url을 생성
     - 산출물: [Article URLs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr3_artIdxUrl.txt)
 <br><br>
 
-1. [getArticleHtmls]():  직전 작업 산출물인 artIdxUrl을 활용, 개별 타겟 게시글 페이지의 html파일을 요청 및 배열의 item으로 저장
-    - 산출물 : [Article HTMLs](https://github.com/ABizCho/SMA_2022summerProject/blob/main/arr4_artHtmls.txt)
+4. [getArticleHtmls](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_4_getArticleHtmls.py):  직전 작업 산출물인 artIdxUrl을 활용, 개별 타겟 게시글 페이지의 html파일 내 필요한 요소들을 dictionary로 구조화하고 배열의 items로 순차 저장
+    - 산출물 : [Article Htmls 처리 코드](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_4_getArticleHtmls.py)
+
+<br>
+
+5. [handleRaw](https://github.com/ABizCho/SMA_2022summerProject/blob/main/scrap_5_handleRaw.py):
+getArticleHtmls에서 구조화하여 저장한 array[dict] 데이터셋을 DataFrame으로 옮겨 저장.
+
+    - 산출물 : [df_arts.csv](https://github.com/ABizCho/SMA_2022summerProject/blob/main/df_arts.csv)
+
 <br><br>
