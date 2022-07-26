@@ -3,8 +3,8 @@ import pandas as pd
 from ckonlpy.tag import Twitter
 twitter = Twitter()
 
-df = pd.read_csv('./outputs/df3_2_artsCleanEtc.csv')
-
+df = pd.read_csv('./outputs/week1/df3_2_artsCleanEtc.csv')
+df = df.loc[:50]
 
 
 ### DOCS : https://github.com/lovit/customized_konlpy
@@ -129,17 +129,17 @@ postprocessor = Postprocessor(twitter,
 
 # 형태소 분석 테스트
 test_series1 = df['art_title'].map(lambda title : postprocessor.pos(title))
+print(test_series1.head())
+# # Noun array만 저장
+# arr_noun_title = []
+# for i in range(len(test_series1)):
+#     temp = []
+#     for j in range(len(test_series1[i])):
+#         temp.append(test_series1[i][j][0])
+#     arr_noun_title.append(temp)
 
-# Noun array만 저장
-arr_noun_title = []
-for i in range(len(test_series1)):
-    temp = []
-    for j in range(len(test_series1[i])):
-        temp.append(test_series1[i][j][0])
-    arr_noun_title.append(temp)
+# print(arr_noun_title)
 
-print(arr_noun_title)
-
-import numpy as np
-np.save('./week2/arr1_noun_title',arr_noun_title)
+# import numpy as np
+# # np.save('./week2/arr1_noun_title',arr_noun_title)
  
